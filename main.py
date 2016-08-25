@@ -6,7 +6,7 @@ import time
 
 class ZeusAlert():
     """
-    Sends alerts to a Cisco Spark Room
+    Sends alerts to a Cisco Zeus
     """
 
     def __init__(self):
@@ -37,10 +37,10 @@ def main():
         rushend = datetime.time(18)
         timestamp = datetime.datetime.now().time()
         msg = "Car Passed".format(random.randint(1,4))
-        if (amstart <= timestamp <= amend):
+        if amstart <= timestamp <= amend:
             if random.randint(0,100) < 50:
                 zeus.trigger(msg)
-        elif (lunchstart <= timestamp <= lunchend):
+        elif lunchstart <= timestamp <= lunchend:
             if random.randint(0,100) < 70:
                 zeus.trigger(msg)
         elif rushstart <= timestamp <= rushend:
