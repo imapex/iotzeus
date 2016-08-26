@@ -10,8 +10,8 @@ class ZeusAlert():
     """
 
     def __init__(self):
-        self.api = client.ZeusClient(os.environ("ZEUS_TOKEN"),
-                                     os.environ("ZEUS_API_HOST"))
+        self.api = client.ZeusClient(os.getenv("ZEUS_TOKEN"),
+                                     os.getenv("ZEUS_API_HOST"))
         self.log = os.getenv("ZEUS_KEY")
         self.key = os.getenv("ZEUS_KEY")
 
@@ -37,10 +37,12 @@ def main():
         rushend = datetime.time(18)
         timestamp = datetime.datetime.now().time()
         msg = "Car Passed".format(random.randint(1,4))
+        # Morning rush hour
         if amstart <= timestamp <= amend:
             if random.randint(0,100) < 50:
                 zeus.trigger(msg)
                 print msg
+        # lunch
         elif lunchstart <= timestamp <= lunchend:
             if random.randint(0,100) < 70:
                 zeus.trigger(msg)
