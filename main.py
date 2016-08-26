@@ -53,7 +53,7 @@ def main():
             if random.randint(0,100) < 20:
                 zeus.trigger(msg)
                 print msg
-        time.sleep(30)
+        time.sleep(5)
 
 if __name__ == '__main__':
     main()
