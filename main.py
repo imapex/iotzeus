@@ -40,13 +40,17 @@ def main():
         if amstart <= timestamp <= amend:
             if random.randint(0,100) < 50:
                 zeus.trigger(msg)
+                print msg
         elif lunchstart <= timestamp <= lunchend:
             if random.randint(0,100) < 70:
                 zeus.trigger(msg)
+                print msg
         elif rushstart <= timestamp <= rushend:
             if random.randint(0,100) < 70:
                 zeus.trigger(msg)
+                print msg
         else:
             if random.randint(0,100) < 20:
                 zeus.trigger(msg)
+                print msg
         time.sleep(30)
